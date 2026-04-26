@@ -1,0 +1,37 @@
+model: gpt-4o-mini
+top_n: 10
+
+weights:
+  required_skills: 0.40
+  preferred_skills: 0.15
+  experience: 0.20
+  education: 0.10
+  location: 0.15
+
+score_formula:
+  match_weight: 0.6
+  interest_weight: 0.4
+
+outreach:
+  max_turns: 5
+  min_turns: 3
+
+skill_aliases:
+  js: javascript
+  ts: typescript
+  postgres: postgresql
+  k8s: kubernetes
+  react.js: react
+  reactjs: react
+  node.js: nodejs
+  node: nodejs
+  vue.js: vue
+  vuejs: vue
+  angular.js: angular
+  angularjs: angular
+  py: python
+  rb: ruby
+  tf: terraform
+  gcp: google cloud
+  aws: amazon web services
+  mongo: mongodb

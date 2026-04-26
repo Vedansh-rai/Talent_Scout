@@ -1,0 +1,16 @@
+We're looking for a Senior Backend Engineer with 5+ years of experience in Python, FastAPI, and PostgreSQL. You'll be designing and building high-throughput REST APIs for our fintech platform processing millions of transactions daily.
+
+Requirements:
+- Strong Python (5+ years)
+- FastAPI or similar async framework
+- PostgreSQL (schema design, query optimization)
+- AWS (EC2, RDS, S3, Lambda)
+- Experience with Docker and containerized deployments
+
+Nice to have:
+- Kubernetes / container orchestration
+- Redis or other caching solutions
+- Message queues (Kafka, RabbitMQ)
+- CI/CD pipeline experience
+
+We're a remote-friendly company based in the US (preference for US timezone overlap). Salary range is $150,000 - $190,000 depending on experience. Bachelor's degree in Computer Science or equivalent required.
