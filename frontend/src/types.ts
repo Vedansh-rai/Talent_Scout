@@ -1,3 +1,9 @@
+/* ─── Stage 1: JD Parser ───────────────────────────────────────── */
+export interface SalaryRange {
+  min: number;
+  max: number;
+}
+
 export interface ParsedJD {
   title: string;
   required_skills: string[];
@@ -5,10 +11,11 @@ export interface ParsedJD {
   min_experience_years?: number;
   education?: string;
   location_preference?: string;
-  salary_range?: { min: number; max: number };
+  salary_range?: SalaryRange;
   role_summary: string;
 }
 
+/* ─── Stage 2: Matching ────────────────────────────────────────── */
 export interface CriterionScore {
   score: number;
   rationale: string;
@@ -22,11 +29,13 @@ export interface MatchExplanation {
   location?: CriterionScore;
 }
 
+/* ─── Stage 3: Outreach ────────────────────────────────────────── */
 export interface ConversationTurn {
-  role: 'agent' | 'candidate';
+  role: "agent" | "candidate";
   message: string;
 }
 
+/* ─── Stage 4: Ranked Output ──────────────────────────────────── */
 export interface RankedCandidate {
   rank: number;
   name: string;
@@ -39,6 +48,14 @@ export interface RankedCandidate {
   match_explanation: MatchExplanation;
   transcript: ConversationTurn[];
   interest_justification: string;
+}
+
+/* ─── API ──────────────────────────────────────────────────────── */
+export interface ScoutRequest {
+  jd_text: string;
+  top_n: number;
+  skip_outreach: boolean;
+  model?: string;
 }
 
 export interface ScoutResponse {

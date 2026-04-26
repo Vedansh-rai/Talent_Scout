@@ -1,1 +1,88 @@
 @import "tailwindcss";
+
+/* ───────────────────────────────────────────────
+   Design Tokens
+   ─────────────────────────────────────────────── */
+:root {
+  --bg-primary: #0d0d0f;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-input: rgba(0, 0, 0, 0.4);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --accent: #f5a623;
+  --accent-hover: #d48c1a;
+  --cyan: #00d4ff;
+  --success: #48bb78;
+  --danger: #e53e3e;
+  --text: #e2e8f0;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --text-faint: rgba(255, 255, 255, 0.3);
+  --font-display: "Playfair Display", serif;
+  --font-mono: "DM Mono", monospace;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+/* ───────────────────────────────────────────────
+   Base
+   ─────────────────────────────────────────────── */
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ───────────────────────────────────────────────
+   Utilities
+   ─────────────────────────────────────────────── */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+.font-sans    { font-family: var(--font-sans); }
+
+/* ───────────────────────────────────────────────
+   Animations
+   ─────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245, 166, 35, 0.4); }
+  50%      { box-shadow: 0 0 25px rgba(245, 166, 35, 0.8); }
+}
+@keyframes typeDots {
+  0%   { content: ""; }
+  25%  { content: "."; }
+  50%  { content: ".."; }
+  75%  { content: "..."; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.typing-indicator::after {
+  content: "";
+  animation: typeDots 1.5s infinite linear;
+}

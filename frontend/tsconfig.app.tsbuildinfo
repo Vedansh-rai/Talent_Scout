@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/components/candidategrid.tsx","./src/components/candidatemodal.tsx","./src/components/header.tsx","./src/components/jdinput.tsx","./src/components/progressring.tsx","./src/components/shortlisttable.tsx"],"version":"6.0.3"}
