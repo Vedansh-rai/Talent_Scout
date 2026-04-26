@@ -1,6 +1,6 @@
 import type { ScoutRequest, ScoutResponse } from "./types";
 
-const API_BASE = "/api";
+const API_BASE = import.meta.env.VITE_API_URL || "/api";
 
 export async function scoutCandidates(req: ScoutRequest): Promise<ScoutResponse> {
   const res = await fetch(`${API_BASE}/scout`, {
